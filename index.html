@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuickGG - Free Popular Games</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-brand">
+        <div class="hero-logo">QG</div>
+        <div>
+          <h1>QuickGG</h1>
+          <p>Great popular games · Free to play · Click a card to launch</p>
+        </div>
+      </div>
+      <div class="search-row">
+        <label class="search-label" for="gameSearch">Search games</label>
+        <div class="search-box">
+          <span class="search-icon">🔎</span>
+          <input id="gameSearch" type="search" placeholder="Search by game name..." />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <section class="cards-grid" id="gamesGrid"></section>
+  </main>
+
+  <template id="gameCardTemplate">
+    <article class="game-card">
+      <div class="game-card-image-wrap">
+        <img class="game-card-image" alt="Game image" />
+      </div>
+      <div class="game-card-body">
+        <div>
+          <h2 class="game-title"></h2>
+          <p class="game-description"></p>
+        </div>
+        <a class="game-link" target="_blank" rel="noopener noreferrer">Play</a>
+      </div>
+    </article>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
