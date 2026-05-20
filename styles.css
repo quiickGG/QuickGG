@@ -42,7 +42,7 @@ body {
 
 .hero {
   position: relative;
-  min-height: 520px;
+  min-height: 620px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -79,11 +79,12 @@ body {
   gap: 18px;
   z-index: 1;
   min-height: 100%;
+  padding-bottom: 24px;
 }
 
 .hero-search-row {
-  max-width: 760px;
-  margin: 0 auto 28px;
+  max-width: 700px;
+  margin: 0 auto 18px;
 }
 
 .starfield {
@@ -135,11 +136,6 @@ body {
   }
 }
 
-.hero-search-row {
-  max-width: 760px;
-  margin: 0 auto;
-}
-
 .search-row {
   display: grid;
   gap: 10px;
@@ -182,8 +178,8 @@ body {
 
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
 }
 
 .game-card {
@@ -192,9 +188,9 @@ body {
   justify-content: space-between;
   background: var(--surface);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 28px;
+  border-radius: 24px;
   overflow: hidden;
-  min-height: 360px;
+  min-height: 320px;
   transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
   box-shadow: 0 18px 55px rgba(0, 0, 0, 0.18);
 }
@@ -209,7 +205,7 @@ body {
 .game-card-image-wrap {
   position: relative;
   overflow: hidden;
-  min-height: 180px;
+  min-height: 150px;
   background: linear-gradient(135deg, rgba(139, 92, 246, 0.18), rgba(79, 70, 229, 0.16));
 }
 
@@ -228,19 +224,19 @@ body {
 
 .game-card-body {
   display: grid;
-  gap: 18px;
-  padding: 22px;
+  gap: 14px;
+  padding: 18px;
 }
 
 .game-title {
   margin: 0;
-  font-size: 1.3rem;
+  font-size: 1.18rem;
 }
 
 .game-description {
   margin: 10px 0 0;
   color: var(--muted);
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 .game-link {
@@ -248,8 +244,8 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 13px 18px;
-  border-radius: 16px;
+  padding: 11px 16px;
+  border-radius: 14px;
   text-decoration: none;
   font-weight: 600;
   color: #fff;
