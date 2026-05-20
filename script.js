@@ -70,6 +70,19 @@ const games = [
 const gamesGrid = document.getElementById('gamesGrid');
 const searchInput = document.getElementById('gameSearch');
 const template = document.getElementById('gameCardTemplate');
+const starfield = document.getElementById('starfield');
+
+function updateStarfieldVisibility() {
+  const heroBottom = document.querySelector('.hero').getBoundingClientRect().bottom;
+  if (heroBottom < 0) {
+    starfield.classList.add('visible');
+  } else {
+    starfield.classList.remove('visible');
+  }
+}
+
+window.addEventListener('scroll', updateStarfieldVisibility);
+window.addEventListener('resize', updateStarfieldVisibility);
 
 function createGameCard(game) {
   const card = template.content.cloneNode(true);
@@ -81,6 +94,12 @@ function createGameCard(game) {
 
   image.src = game.image;
   image.alt = `${game.title} image`;
+  image.onerror = () => {
+    if (!image.dataset.fallback) {
+      image.dataset.fallback = 'true';
+      image.src = 'images/placeholder.svg';
+    }
+  };
   title.textContent = game.title;
   description.textContent = game.description;
   link.href = game.url;
