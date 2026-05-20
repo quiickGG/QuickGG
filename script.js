@@ -89,6 +89,7 @@ function createGameCard(game) {
   const article = card.querySelector('.game-card');
   const image = card.querySelector('.game-card-image');
   const title = card.querySelector('.game-title');
+  const description = card.querySelector('.game-description');
   const link = card.querySelector('.game-link');
 
   image.src = game.image;
@@ -100,6 +101,7 @@ function createGameCard(game) {
     }
   };
   title.textContent = game.title;
+  description.textContent = game.description;
   link.href = game.url;
   link.textContent = 'Play now';
 
