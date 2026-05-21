@@ -21,7 +21,7 @@ const games = [
     title: 'Rooftop Snipers',
     description: 'Battle opponents from rooftop platforms in this competitive two-player sniping game.',
     url: 'https://sites.google.com/view/classroom6x/rooftop-snipers',
-    image: 'images/rooftop-snipers.png',
+    image: 'images/rooftop-snipers-new.svg',
   },
   {
     title: 'Tiny Fishing',
