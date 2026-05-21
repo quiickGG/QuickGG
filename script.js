@@ -21,7 +21,7 @@ const games = [
     title: 'Rooftop Snipers',
     description: 'Battle opponents from rooftop platforms in this competitive two-player sniping game.',
     url: 'https://sites.google.com/view/classroom6x/rooftop-snipers',
-    image: 'images/rooftop-snipers-new.svg',
+    image: 'images/rooftop%20snipers.png',
   },
   {
     title: 'Tiny Fishing',
@@ -57,13 +57,13 @@ const games = [
     title: 'Merge Fruits',
     description: 'Combine fruits, grow your harvest, and complete lively puzzle objectives.',
     url: 'https://sites.google.com/view/classroom6x/merge-fruits',
-    image: 'images/merge-fruits-new.svg',
+    image: 'images/merge%20fruits.png',
   },
   {
     title: 'Archer Ragdoll',
     description: 'Shoot arrows, hit targets, and master ragdoll physics in this precision archery game.',
     url: 'https://sites.google.com/view/classroom6x/archer-ragdoll',
-    image: 'images/archer-ragdoll-new.svg',
+    image: 'images/ragdoll%20archers.png',
   },
 ];
 
