@@ -51,17 +51,6 @@ body {
   background: #080c14;
 }
 
-.hero-bg-image {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: top center;
-  display: block;
-  z-index: 0;
-}
-
 .hero::after {
   content: '';
   position: absolute;
@@ -75,11 +64,24 @@ body {
   width: min(1140px, 100%);
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  gap: 18px;
+  align-items: center;
+  gap: 22px;
   z-index: 1;
-  min-height: 100%;
-  padding-bottom: 24px;
+  padding-top: 42px;
+}
+
+.hero-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  width: 100%;
+}
+
+.hero-logo {
+  width: 160px;
+  max-width: 100%;
+  height: auto;
 }
 
 .hero-search-row {
@@ -183,6 +185,7 @@ body {
 }
 
 .game-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -193,13 +196,29 @@ body {
   min-height: 320px;
   transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
   box-shadow: 0 18px 55px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+}
+
+.game-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(139, 92, 246, 0.14), transparent 40%);
+  opacity: 0;
+  transition: opacity 220ms ease;
+  pointer-events: none;
 }
 
 .game-card:hover,
 .game-card:focus-within {
-  transform: translateY(-6px);
-  border-color: rgba(139, 92, 246, 0.36);
-  box-shadow: 0 26px 80px rgba(0, 0, 0, 0.28);
+  transform: translateY(-10px) scale(1.01);
+  border-color: rgba(139, 92, 246, 0.5);
+  box-shadow: 0 32px 90px rgba(99, 102, 241, 0.28), 0 0 0 1px rgba(139, 92, 246, 0.14);
+}
+
+.game-card:hover::before,
+.game-card:focus-within::before {
+  opacity: 1;
 }
 
 .game-card-image-wrap {
@@ -219,7 +238,7 @@ body {
 
 .game-card:hover .game-card-image,
 .game-card:focus-within .game-card-image {
-  transform: scale(1.05);
+  transform: scale(1.1) rotate(1.2deg);
 }
 
 .game-card-body {
@@ -258,6 +277,16 @@ body {
 .game-link:hover {
   transform: translateY(-1px);
   opacity: 0.96;
+}
+
+.confetti-piece {
+  position: fixed;
+  pointer-events: none;
+  z-index: 2500;
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  opacity: 0;
 }
 
 @media (max-width: 720px) {

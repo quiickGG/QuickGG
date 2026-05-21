@@ -57,13 +57,13 @@ const games = [
     title: 'Merge Fruits',
     description: 'Combine fruits, grow your harvest, and complete lively puzzle objectives.',
     url: 'https://sites.google.com/view/classroom6x/merge-fruits',
-    image: 'images/merge-fruits.png',
+    image: 'images/merge-fruits-new.svg',
   },
   {
     title: 'Archer Ragdoll',
     description: 'Shoot arrows, hit targets, and master ragdoll physics in this precision archery game.',
     url: 'https://sites.google.com/view/classroom6x/archer-ragdoll',
-    image: 'images/archer-ragdoll.png',
+    image: 'images/archer-ragdoll-new.svg',
   },
 ];
 
@@ -71,6 +71,39 @@ const gamesGrid = document.getElementById('gamesGrid');
 const searchInput = document.getElementById('gameSearch');
 const template = document.getElementById('gameCardTemplate');
 const starfield = document.getElementById('starfield');
+
+function spawnConfetti(x, y) {
+  const colors = ['#8b5cf6', '#60a5fa', '#facc15', '#34d399', '#f472b6'];
+  for (let i = 0; i < 18; i += 1) {
+    const particle = document.createElement('div');
+    particle.className = 'confetti-piece';
+    const size = 6 + Math.random() * 8;
+    const angle = Math.random() * 360;
+    const distance = 80 + Math.random() * 120;
+    const velocityX = Math.cos(angle) * distance;
+    const velocityY = Math.sin(angle) * distance - 30;
+
+    particle.style.width = `${size}px`;
+    particle.style.height = `${size * 0.55}px`;
+    particle.style.left = `${x}px`;
+    particle.style.top = `${y}px`;
+    particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+    particle.style.opacity = '1';
+    particle.style.transform = `translate(-50%, -50%) rotate(${Math.random() * 360}deg)`;
+
+    document.body.appendChild(particle);
+
+    requestAnimationFrame(() => {
+      particle.style.transition = 'transform 700ms ease-out, opacity 700ms ease-out';
+      particle.style.transform = `translate(${velocityX}px, ${velocityY}px) rotate(${Math.random() * 720}deg)`;
+      particle.style.opacity = '0';
+    });
+
+    window.setTimeout(() => {
+      particle.remove();
+    }, 780);
+  }
+}
 
 function updateStarfieldVisibility() {
   const heroBottom = document.querySelector('.hero').getBoundingClientRect().bottom;
@@ -105,7 +138,14 @@ function createGameCard(game) {
   link.href = game.url;
   link.textContent = 'Play now';
 
-  article.addEventListener('click', () => {
+  article.addEventListener('click', (event) => {
+    spawnConfetti(event.clientX, event.clientY);
+    window.open(game.url, '_blank');
+  });
+
+  link.addEventListener('click', (event) => {
+    event.stopPropagation();
+    spawnConfetti(event.clientX, event.clientY);
     window.open(game.url, '_blank');
   });
 

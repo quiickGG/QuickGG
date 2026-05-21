@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <linearGradient id="arrowGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#60a5fa" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+  </defs>
+  <rect width="320" height="240" rx="32" fill="#111827" />
+  <circle cx="170" cy="140" r="60" fill="#0ea5e9" opacity="0.18" />
+  <path d="M120 190c-10-30 2-58 24-72s46-10 66 4" fill="none" stroke="#f8fafc" stroke-width="12" stroke-linecap="round" />
+  <path d="M175 110c16-14 44-18 62 0" fill="none" stroke="#38bdf8" stroke-width="10" stroke-linecap="round" />
+  <path d="M100 80l58 42" fill="none" stroke="#f8fafc" stroke-width="12" stroke-linecap="round" />
+  <path d="M158 93l72-24" fill="none" stroke="url(#arrowGlow)" stroke-width="12" stroke-linecap="round" />
+  <circle cx="118" cy="70" r="22" fill="#f8fafc" />
+  <circle cx="118" cy="70" r="10" fill="#0f172a" />
+  <path d="M118 92v22" fill="none" stroke="#f8fafc" stroke-width="10" stroke-linecap="round" />
+  <path d="M188 96l-16 38" fill="none" stroke="#f8fafc" stroke-width="10" stroke-linecap="round" />
+  <path d="M132 124l-18 40" fill="none" stroke="#f8fafc" stroke-width="10" stroke-linecap="round" />
+  <path d="M100 130c12-6 26-6 38 0" fill="none" stroke="#f8fafc" stroke-width="10" stroke-linecap="round" />
+  <path d="M92 52c20 6 24 32 12 38" fill="none" stroke="#a5b4fc" stroke-width="8" stroke-linecap="round" />
+</svg>
